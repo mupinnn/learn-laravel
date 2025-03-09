@@ -2,9 +2,10 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "build:ssr": "vite build && vite build --ssr",
-        "dev": "vite",
+        "build:admin": "vite build -c vite.admin.config.ts",
+        "build:customer": "vite build -c vite.customer.config.ts",
+        "dev:admin": "vite -c vite.admin.config.ts",
+        "dev:customer": "vite -c vite.customer.config.ts",
         "format": "prettier --write resources/",
         "format:check": "prettier --check resources/",
         "lint": "eslint . --fix",
