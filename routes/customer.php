@@ -2,5 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'customer.index');
-Route::view('/login', 'customer.auth.login');
+Route::name('customer.')->group(function () {
+    Route::view('/', 'customer.index')->name('home');
+    Route::view('login', 'customer.auth.login')->name('login');
+});
