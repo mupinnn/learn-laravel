@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Admin\HandleAppearance;
 use App\Http\Middleware\Admin\HandleInertiaRequests;
@@ -24,5 +25,8 @@ Route::group([
 
         Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
             ->name('logout');
+
+        Route::get('products', [ProductController::class, 'index'])
+            ->name('products.index');
     });
 });
