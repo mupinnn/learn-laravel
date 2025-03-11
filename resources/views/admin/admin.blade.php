@@ -37,7 +37,10 @@
 
         @routes
         @viteReactRefresh
-        @vite(['resources/views/admin/app.tsx', "resources/views/admin/pages/{$page['component']}.tsx"])
+        {{
+            Vite::withEntryPoints(['resources/views/admin/app.tsx', "resources/views/admin/pages/{$page['component']}.tsx"])
+                ->useBuildDirectory('build/admin')
+        }}
         @inertiaHead
     </head>
     <body class="font-sans antialiased">

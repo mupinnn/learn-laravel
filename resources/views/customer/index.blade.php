@@ -10,7 +10,10 @@
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
 
         @routes
-        @vite(['resources/js/app.js'])
+        {{
+            Vite::withEntryPoints(['resources/js/app.js'])
+                ->useBuildDirectory('build/customer')
+        }}
     </head>
     <body class="font-sans antialiased">
         <main class="max-w-lg mx-auto p-4 flex flex-col gap-8 lg:p-8">
